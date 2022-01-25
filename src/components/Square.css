@@ -1,0 +1,10 @@
+.bodySquare {
+  width: 100px;
+  height: 100px;
+
+  border: solid 1px;
+
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}

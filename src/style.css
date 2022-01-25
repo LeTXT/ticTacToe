@@ -1,0 +1,15 @@
+body {
+  display: grid;
+  justify-content: center;
+  
+}
+
+h1, p {
+  font-family: Lato;
+}
+
+
+
+.flexSquare {
+  display: flex;
+}

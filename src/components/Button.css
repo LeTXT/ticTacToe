@@ -1,0 +1,11 @@
+.bodyButton {
+  width: 100px;
+  height: 100px;
+}
+button {
+  border-style: hidden;
+
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+}
