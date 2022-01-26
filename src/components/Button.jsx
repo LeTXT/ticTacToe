@@ -17,9 +17,10 @@ arrL[0] = arr[0]
 arr.shift()
 return state
 }
-console.log(arrP)
+console.log(arrL[0])
 
-Logic()
+
+
 
 const disabled = () => setStateB(!stateB)
 
@@ -31,6 +32,7 @@ const hadleClick = () => {
   clearArr()
   disabled()
   handleState()
+  Logic()
 }
 
   return (
