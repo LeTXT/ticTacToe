@@ -10,20 +10,20 @@ export default function App() {
   console.log(arrP)
   return (
     <div>
-      <div className='flexSquare'>
-      <Square submit={() => arrP[0].push(h)}/>
-      <Square />
-      <Square />
+      <div className='flexSquare' >
+      <Square index={0}/>
+      <Square index={1}/>
+      <Square index={2}/>
       </div>
       <div className='flexSquare'>
-      <Square />
-      <Square />
-      <Square />
+      <Square index={3}/>
+      <Square index={4}/>
+      <Square index={5}/>
       </div>
       <div className='flexSquare'>
-      <Square />
-      <Square />
-      <Square />
+      <Square index={6}/>
+      <Square index={7}/>
+      <Square index={8}/>
       </div>
     </div>
   );
