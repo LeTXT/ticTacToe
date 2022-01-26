@@ -10,24 +10,24 @@ export default function App() {
   // const [stateB, setStateB] = useState(false)
 
   // const disabledF = () => setStateB(!stateB)
-  const stopGame = () => arr === [] 
+  const stopGame = () => arr[0] === undefined 
   
   return (
     <div>
       <div className='flexSquare' >
       <Square index={0} onClick={false} disabled={stopGame()} />
-      <Square index={1}/>
-      <Square index={2}/>
+      <Square index={1} disabled={stopGame()}/>
+      <Square index={2} disabled={stopGame()}/>
       </div>
       <div className='flexSquare'>
-      <Square index={3}/>
-      <Square index={4}/>
-      <Square index={5}/>
+      <Square index={3} disabled={stopGame()}/>
+      <Square index={4} disabled={stopGame()}/>
+      <Square index={5} disabled={stopGame()}/>
       </div>
       <div className='flexSquare'>
-      <Square index={6}/>
-      <Square index={7}/>
-      <Square index={8}/>
+      <Square index={6} disabled={stopGame()}/>
+      <Square index={7} disabled={stopGame()}/>
+      <Square index={8} disabled={stopGame()}/>
       </div>
       <Logic />
     </div>

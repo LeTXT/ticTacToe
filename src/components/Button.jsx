@@ -9,6 +9,7 @@ import Logic from './Logic'
 export default function Button(props) {
 const [state, setState] = useState([])
 const [stateB, setStateB] = useState(false)
+const [stateA, setStateA] = useState(arr[0])
 
 const clearArr = () => {
 setState([arr[0]])
@@ -24,22 +25,24 @@ console.log()
 const xO = () => state[0] === 'x' ? 'red' : 'blue'
 
 const disabled = () => setStateB(!stateB)
-const stopGame = () => arr === [undefined]
+const stopGame = () => arr[0] === undefined
 
-console.log(stopGame())
+console.log(stateA)
 
 const hadleClick = () => {
   clearArr()
   disabled()
   props.disabledF
-  stopGame()
+  
   Logic()
   xO()
 }
 
+
+
   return (
     <div className='bodyButton'>
-      <button onClick={() => hadleClick()} disabled={stateB || stopGame() || props.disabled} ><h3 className={xO()} >{state}</h3></button>
+      <button onClick={() => hadleClick()} disabled={stateB || stateA === [undefined] } ><h3 className={xO()} >{state}</h3></button>
     </div>
   )
 }
