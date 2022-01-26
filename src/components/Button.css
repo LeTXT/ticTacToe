@@ -15,9 +15,16 @@ button {
 
 button:hover {
   transition: 1.2s;
-  background-color: #5aa9e6;
+  background-color: #fdf0d5;
 }
 
 button:disabled, button[disabled] {
   background-color: white;
+}
+
+.red {
+  color: #c1121f;
+}
+.blue {
+  color: #003049;
 }
