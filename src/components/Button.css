@@ -6,6 +6,7 @@ button {
   border-style: hidden;
 
   background-color: white;
+  transition: 0.9s;
 
   cursor: pointer;
   height: 100px;

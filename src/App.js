@@ -2,12 +2,12 @@ import React from "react";
 import "./style.css";
 
 import Square from './components/Square'
-import {arrP} from './components/Arr'
+import Logic from './components/Logic'
 
 
 export default function App() {
 
-  console.log(arrP)
+  
   return (
     <div>
       <div className='flexSquare' >
@@ -25,6 +25,7 @@ export default function App() {
       <Square index={7}/>
       <Square index={8}/>
       </div>
+      <Logic />
     </div>
   );
 }
