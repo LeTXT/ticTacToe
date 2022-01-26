@@ -5,13 +5,15 @@
 button {
   border-style: hidden;
 
+  background-color: white;
+
   cursor: pointer;
   height: 100px;
   width: 100px;
 }
 
 button:hover {
-  transition: 1.5s;
+  transition: 1.2s;
   background-color: #5aa9e6;
 }
 

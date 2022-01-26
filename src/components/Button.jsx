@@ -1,16 +1,16 @@
 import React, {useState} from 'react'
 
 import './Button.css'
-import {arr} from './Arr'
+import {arr, arrP} from './Arr'
 
-export default function Button() {
+export default function Button(props) {
 const [state, setState] = useState([])
 const [stateB, setStateB] = useState(false)
 
 const clearArr = () => {
-setState([...state, arr[0]])
+setState([arr[0]])
 arr.shift()
-return state[0]
+return state
 }
 
 const disabled = () => setStateB(!stateB)
@@ -22,7 +22,7 @@ const hadleClick = () => {
 
   return (
     <div className='bodyButton'>
-      <button onClick={() => hadleClick()} disabled={stateB}><h3>{state}</h3></button>
+      <button onClick={() => hadleClick()} disabled={stateB} submit={props.submit}><h3>{state}</h3></button>
     </div>
   )
 }
