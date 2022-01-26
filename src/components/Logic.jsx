@@ -3,10 +3,9 @@ import React, {useState, useEffect} from 'react'
 import {arrP, arrL} from './Arr'
 
 export default function Logic() {
-  const [stateA, setStateA] = useState([])
 
 
-  const elseIf = () => {
+  const elseIf = async () => {
     if(arrP[0] === arrP[1] && arrP[1] === arrP[2] && arrP[0] === arrP[2] && arrP[0] !== undefined) {
       console.log(arrL + ' ganhou')
       return arrL 
@@ -29,7 +28,7 @@ export default function Logic() {
 
   return (
     <div>
-      <h1>{stateA}</h1>
+      <h1>{await elseIf()}</h1>
     </div>
   )
 }
