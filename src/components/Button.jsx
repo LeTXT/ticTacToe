@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 import './Button.css'
 import {arr, arrP, arrL} from './Arr'
-import Logic from './Logic'
+import Logic, {trueFalse} from './Logic'
 
 
 
