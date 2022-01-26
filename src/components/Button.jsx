@@ -22,7 +22,7 @@ const hadleClick = () => {
 
   return (
     <div className='bodyButton'>
-      <button onClick={() => clearArr()} disabled={stateB}>{state}</button>
+      <button onClick={() => hadleClick()} disabled={stateB}><h3>{state}</h3></button>
     </div>
   )
 }

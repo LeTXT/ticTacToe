@@ -9,3 +9,12 @@ button {
   height: 100px;
   width: 100px;
 }
+
+button:hover {
+  transition: 1.5s;
+  background-color: #5aa9e6;
+}
+
+button:disabled, button[disabled] {
+  background-color: white;
+}
