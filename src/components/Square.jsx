@@ -8,15 +8,15 @@ import Turn from './Turn'
 import {arr, arrL} from './Arr'
 
 export default function Square() {
-  
+  const [stateG, setStateG] = useState()
  
-  console.log(Button())
+  console.log(Button)
   
 
   return (
     <div className='bodySquare'>
       <div className='flexSquare' >
-      <Button index={0}  />
+      <Button index={0}  setStateG={setStateG} />
       <Button index={1}  />
       <Button index={2}  />
       </div>

@@ -25,7 +25,7 @@ const xO = () => state[0] === 'x' ? 'red' : 'blue'
 
 const disabled = () => setStateB(!stateB)
 
-const turn = () => e = arr[0]
+const turn = () => props.setStateG(arr[0])
 
 const hadleClick = () => {
   clearArr()
