@@ -6,8 +6,9 @@ import Logic from './Logic'
 import Turn from './Turn'
 
 export default function Square() {
-  const [state, setState] = useState([])
-  const [stateB, setStateB] = useState(false)
+
+  
+  const turn = () => 'Vez do'
 
   return (
     <div className='bodySquare'>
@@ -26,7 +27,7 @@ export default function Square() {
       <Button index={7} />
       <Button index={8} />
       </div>
-      <Turn sta={"x"} />
+      <Turn turn={turn()} state='x' />
     </div>
   )
 }

@@ -13,6 +13,7 @@ export default function App() {
     <div>
       <div className='flexSquare' >
       <Square />
+      
       </div>
     </div>
   );

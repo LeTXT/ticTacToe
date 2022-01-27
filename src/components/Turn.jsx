@@ -1,14 +1,20 @@
 import React from 'react'
-import {arrL} from './Arr'
+
+import {arr} from './Arr'
 
 export default function Turn(props) {
 
+  use
 
   return (
-    <div >
-      <h1 >
-        Vez do <h3>{props.sta}</h3>
+    <div className='bodyTurn'>
+      <h1>
+        {props.turn}
       </h1>
+      <h3>
+        {props.state}
+      </h3>
+      
     </div>
   )
 }
