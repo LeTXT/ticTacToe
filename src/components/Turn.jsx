@@ -7,12 +7,12 @@ export default function Turn({turn, state}) {
 
   return (
     <div className='bodyTurn' >
-      <h1>
+      {turn && <h1>
         {turn}
-      </h1>
-      <h3>
+      </h1>}
+      {state && <h3>
         {state}
-      </h3>
+      </h3>}
     </div>
   )
 }
