@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
   display: grid;
   justify-content: center;
@@ -8,8 +10,9 @@ h1, p {
   font-family: Lato;
 }
 h3 {
-  font-size: 32px;
-  
+  font-size: 48px;
+  font-family: 'Press Start 2P';
+  text-transform: uppercase;
 }
 
 
