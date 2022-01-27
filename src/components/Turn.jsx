@@ -1,11 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 
-import {arr} from './Arr'
-import Button from './Button'
 
 export default function Turn({turn, state}) {
 
-Button()
   
 
   return (

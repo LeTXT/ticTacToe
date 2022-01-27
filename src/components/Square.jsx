@@ -9,17 +9,17 @@ import Button from './Button'
 import {arr, arrL, arrP} from './Arr'
 
 export default function Square() {
-  const [state, setState] = useState([])
+  const [state, setState] = useState()
 
 
   return (
     <div className='bodySquare'>
       <div className='flexSquare'>
-        <Button index={0} stateArr={arrP[1]} state={0} setState={setState} />
+        <Button index={0} stateArr={arrP[0]} state={} setState={setState} />
       </div>
      
       
-      <Turn turn={'Vez do'} state={arr[0]} />
+      <Turn turn={'Vez do'} state={} />
     </div>
   )
 }

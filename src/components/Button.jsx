@@ -10,7 +10,7 @@ export default function Button(props) {
 
  
 const clearArr = () => {
-  // props.setState([arr[0]])
+  props.setState([arr[0]])
   arrP[props.index] = arr[0]
   arr === undefined? arrL[0] : arrL[0] = arr[0]
   arr.shift()
@@ -18,7 +18,7 @@ const clearArr = () => {
   return arrP
   }
   
-  const xO = () => {arr[0] === 'x' ? 'red' : 'blue'; return 'red'}
+  const xO = () => arr[0] === 'x' ? 'red' : 'blue'; 
   
   const disabled = () =>  setStateB(!stateB)
 
@@ -35,7 +35,7 @@ const clearArr = () => {
 
   return (
     <div className='bodyButton' >
-      <div onClick={hadleClick()} disabled={stateB} className='btn'><h3 className={xO()} >{'x'}</h3></div>
+      <div onClick={() => hadleClick()} disabled={stateB} className='btn'><h3 className={xO()} >{props.stateArr}</h3></div>
     </div>
   )
 }
