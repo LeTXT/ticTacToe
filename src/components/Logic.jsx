@@ -6,7 +6,7 @@ import {arrP, arrL, arr} from './Arr'
 
 export default function Logic() {
     
-  console.log(arrL)
+  
   
   const elseIf = () => {
     if (arrP[0] === arrP[1] && arrP[1] === arrP[2] && arrP[0] !== undefined) {

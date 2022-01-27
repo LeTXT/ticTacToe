@@ -6,7 +6,7 @@ import Logic from './Logic'
 import Turn from './Turn'
 
 
-export default function Button(props) {
+export default function Button(props, e) {
 const [state, setState] = useState([])
 const [stateB, setStateB] = useState(false)
 
@@ -25,21 +25,21 @@ const xO = () => state[0] === 'x' ? 'red' : 'blue'
 
 const disabled = () => setStateB(!stateB)
 
-const turn = () => props.arr
+const turn = () => e = arr[0]
 
 const hadleClick = () => {
   clearArr()
   disabled()
   Logic()
   xO()
-  
+  turn()
   
 }
 
 
 
   return (
-    <div className='bodyButton'>
+    <div className='bodyButton' >
       <button onClick={() => hadleClick()} disabled={stateB} ><h3 className={xO()} >{state}</h3></button>
     </div>
   )

@@ -1,22 +1,20 @@
 import React, {useState, useEffect} from 'react'
 
 import {arr} from './Arr'
+import Button from './Button'
 
-export default function Turn(props) {
+export default function Turn(e) {
 
-  // const [state, setState] = useState(arr[0])
-
-  // useEffect(() => {
-  //   setState(arr[0])
-  // }, [arr])
+Button()
+  
 
   return (
-    <div className='bodyTurn'>
+    <div className='bodyTurn' >
       <h1>
         Vez do
       </h1>
       <h3>
-        {props.state}
+        {}
       </h3>
       
     </div>

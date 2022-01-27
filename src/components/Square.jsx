@@ -5,14 +5,13 @@ import Button from './Button'
 import Logic from './Logic'
 import Turn from './Turn'
 
-import {arr} from './Arr'
+import {arr, arrL} from './Arr'
 
 export default function Square() {
-  const [ state, setState ] = useState(arr[0])
-
-  useEffect(() => {
-    setState(arr[0])
-  })
+  
+ 
+  console.log(Button())
+  
 
   return (
     <div className='bodySquare'>
@@ -31,7 +30,7 @@ export default function Square() {
       <Button index={7} />
       <Button index={8} />
       </div>
-      <Turn turn={} state={state} />
+      <Turn turn={} state={} />
     </div>
   )
 }
