@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import './Button.css'
 import {arr, arrP, arrL} from './Arr'
 import Logic from './Logic'
+import Turn from './Turn'
 
 
 export default function Button(props) {
@@ -24,12 +25,14 @@ const xO = () => state[0] === 'x' ? 'red' : 'blue'
 
 const disabled = () => setStateB(!stateB)
 
+const turn = () => props.arr
 
 const hadleClick = () => {
   clearArr()
   disabled()
   Logic()
   xO()
+  
   
 }
 

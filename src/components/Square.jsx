@@ -1,14 +1,18 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import './Square.css'
 import Button from './Button'
 import Logic from './Logic'
 import Turn from './Turn'
 
-export default function Square() {
+import {arr} from './Arr'
 
-  
-  const turn = () => 'Vez do'
+export default function Square() {
+  const [ state, setState ] = useState(arr[0])
+
+  useEffect(() => {
+    setState(arr[0])
+  })
 
   return (
     <div className='bodySquare'>
@@ -27,7 +31,7 @@ export default function Square() {
       <Button index={7} />
       <Button index={8} />
       </div>
-      <Turn turn={turn()} state='x' />
+      <Turn turn={} state={state} />
     </div>
   )
 }

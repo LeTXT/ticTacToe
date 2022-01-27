@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import {arrP, arrL, arr} from './Arr'
 
 
+
 export default function Logic() {
     
   console.log(arrL)
@@ -44,6 +45,7 @@ export default function Logic() {
 
   }
 
+  
   
   
   return (
