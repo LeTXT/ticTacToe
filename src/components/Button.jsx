@@ -6,7 +6,7 @@ import Logic from './Logic'
 import Turn from './Turn'
 
 
-export default function Button(props, e) {
+export default function Button(props) {
 const [state, setState] = useState([])
 const [stateB, setStateB] = useState(false)
 
@@ -20,19 +20,16 @@ arr.shift()
 return state
 }
 
-
 const xO = () => state[0] === 'x' ? 'red' : 'blue'
 
 const disabled = () => setStateB(!stateB)
 
-const turn = () => props.setStateG(arr[0])
 
 const hadleClick = () => {
   clearArr()
   disabled()
   Logic()
   xO()
-  turn()
   
 }
 
