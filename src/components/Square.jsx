@@ -12,7 +12,7 @@ export default function Square() {
 
   const arrT = () => arr[0] === 'x' ? <h3 className='red'>x</h3> : <h3 className='blue'>o</h3> 
 
-  const arrWin = () => arr[1] === 'x' ? <h1 className='red'>x</h1> : <h1 className='blue h1'>o</h1> 
+  const arrWin = () => arr[1] === 'x' ? <h1 className='red'>x</h1> : <h1 className='blue'>o</h1> 
 
   const h1 = <h1 className='h1'>O {arrWin()} venceu!</h1>
 
