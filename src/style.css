@@ -28,10 +28,47 @@ h3 {
   height: 200px;
 
   margin-top: 30px;
-  background-color: #1f7a8c;
+  background-color: white;
 
   border-radius: 5px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
 
   text-align: center;
+
+}
+
+.bodyButton {
+  width: 100px;
+  height: 100px;
+}
+.btn {
+  border-style: hidden;
+  border: solid 1px;
+
+  background-color: white;
+  transition: 0.9s;
+
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn:hover {
+  transition: 1.2s;
+  background-color: #fdf0d5;
+}
+
+.btn:disabled, button[disabled] {
+  background-color: white;
+}
+
+.red {
+  color: #c1121f;
+}
+.blue {
+  color: #003049;
 }

@@ -2,7 +2,7 @@
   width: 100px;
   height: 100px;
 }
-button {
+.btn {
   border-style: hidden;
   border: solid 1px;
 
@@ -18,12 +18,12 @@ button {
   align-items: center;
 }
 
-button:hover {
+.btn:hover {
   transition: 1.2s;
   background-color: #fdf0d5;
 }
 
-button:disabled, button[disabled] {
+.btn:disabled, button[disabled] {
   background-color: white;
 }
 
