@@ -1,14 +1,15 @@
-import React, {useState} from 'react'
+import React from 'react'
 import {arrL} from './Arr'
 
-export default function Turn() {
-  const [state] = useState(arrL)
+export default function Turn(props) {
 
-  const xO = () => state[0] === 'x' ? 'red' : 'blue'
 
   return (
-    <div>
-      {state}
+    <div >
+      <h1 >
+        Vez do <h3>{props.sta}</h3>
+      </h1>
     </div>
   )
 }
+

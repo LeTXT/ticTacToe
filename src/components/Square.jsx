@@ -1,18 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import './Square.css'
 import Button from './Button'
 import Logic from './Logic'
+import Turn from './Turn'
 
 export default function Square() {
-  console.log(Logic() + 'Square')
+  const [state, setState] = useState([])
+  const [stateB, setStateB] = useState(false)
 
   return (
     <div className='bodySquare'>
       <div className='flexSquare' >
-      <Button index={0} />
-      <Button index={1} />
-      <Button index={2} />
+      <Button index={0}  />
+      <Button index={1}  />
+      <Button index={2}  />
       </div>
       <div className='flexSquare'>
       <Button index={3} />
@@ -24,6 +26,7 @@ export default function Square() {
       <Button index={7} />
       <Button index={8} />
       </div>
+      <Turn sta={"x"} />
     </div>
   )
 }
