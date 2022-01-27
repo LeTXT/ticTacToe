@@ -1,10 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import "./style.css";
 
 import Square from './components/Square'
-import Logic from './components/Logic'
-import {arrL, arr} from './components/Arr'
-import Turn from './components/Turn'
 
 
 export default function App() {
