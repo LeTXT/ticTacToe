@@ -11,12 +11,12 @@ export default function Turn({turnState}) {
 
   const arrWin = () => arr[1] === 'x' ? <h1 className='red'>x</h1> : <h1 className='blue'>o</h1> 
 
-  const h1 = <h1 className='h1'> venceu!</h1>
+  const h1 = <h1 className='h1'> Win!</h1>
 
-  const turnSta = () => Logic() ? h1 : arr[0] === undefined ? 'Empate' : arr[0]
+  const turnSta = () => Logic() ? h1 : arr[0] === undefined ? 'Draw' : arr[0]
     
 
-  const turnStr = () => Logic() ? arrWin() : arr[0] === undefined ? '' : 'Turno do'
+  const turnStr = () => Logic() ? arrWin() : arr[0] === undefined ? '' : 'Turn:'
   
   
 
