@@ -1,49 +1,62 @@
 import React, {useState} from 'react'
 
-
-import Logic from './Logic'
 import Turn from './Turn'
 import Button from './Button'
+import Reset from './Reset'
 
-import {arr, arrL, arrP} from './Arr'
+import {arr, arrP} from './Arr'
 
 export default function Square() {
-  const [state, setState] = useState()
+  const [state, setState] = useState(arr)
+  const [stateArr, setStateArr] = useState(arrP)
+  const [stateTF, setStateTF] = useState()
 
-  const arrT = () => arr[0] === 'x' ? <h3 className='red'>x</h3> : <h3 className='blue'>o</h3> 
+ console.log(state);
+  const reset = () => {
+    arrP.splice(0)
 
-  const arrWin = () => arr[1] === 'x' ? <h1 className='red'>x</h1> : <h1 className='blue'>o</h1> 
+    arr.splice(0)
+    arr.push('x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x')
 
-  const h1 = <h1 className='h1'>O {arrWin()} venceu!</h1>
-
-  const turnState = () => Logic() ? h1 : arr[0] === undefined ? 'Empate' : arrT()
+    setStateArr(arrP)
+    setState('x')
     
 
-  const turnStr = () => Logic() ? '' : arr[0] === undefined ? '' : 'Turno do'
+    return true
+  }
 
 
-  const arrPrb = (e) => arrP[e] === 'x' ? <h3 className='red'>x</h3> : arrP[e] === 'o' ? <h3 className='blue'>o</h3> : undefined
+  const classname = (e) => stateArr[e] === 'x' ? 'red' : 'blue'
+
 
   return (
     <div className='bodySquare'>
       <div className='flexSquare'>
-        <Button index={0} stateArr={arrPrb(0)} state={state} setState={setState} />
-        <Button index={1} stateArr={arrPrb(1)} state={state} setState={setState} />
-        <Button index={2} stateArr={arrPrb(2)} state={state} setState={setState} />
+        <Button index={0} stateArr={stateArr[0]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(0)}/>
+
+        <Button index={1} stateArr={stateArr[1]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(1)}/>
+
+        <Button index={2} stateArr={stateArr[2]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(2)}/>
       </div>
       <div className='flexSquare'>
-        <Button index={3} stateArr={arrPrb(3)} state={state} setState={setState} />
-        <Button index={4} stateArr={arrPrb(4)} state={state} setState={setState} />
-        <Button index={5} stateArr={arrPrb(5)} state={state} setState={setState} />
+        <Button index={3} stateArr={stateArr[3]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(3)}/>
+
+        <Button index={4} stateArr={stateArr[4]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(4)}/>
+
+        <Button index={5}  stateArr={stateArr[5]}  state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(5)}/>
       </div>
       <div className='flexSquare'>
-        <Button index={6} stateArr={arrPrb(6)} state={state} setState={setState} />
-        <Button index={7} stateArr={arrPrb(7)} state={state} setState={setState} />
-        <Button index={8} stateArr={arrPrb(8)} state={state} setState={setState} />
+        <Button index={6} stateArr={stateArr[6]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(6)}/>
+
+        <Button index={7} stateArr={stateArr[7]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(7)}/>
+
+        <Button index={8} stateArr={stateArr[8]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(8)}/>
       </div>
      
       
-      <Turn turn={turnStr()} state={turnState()} />
+      <Turn  turnState={state[0]}/>
+
+      <Reset reset={() => reset()}/>
     </div>
   )
 }
