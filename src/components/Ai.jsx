@@ -9,13 +9,14 @@ const math = (min, max) => {
 }
 
 export const ai = ({stateArr, setStateArr, setState, index}) => {
-    if(stateArr[math(0, 8)]) {
+    if(arrP[math(0, 8)]) {
         setState([arr[0]])
     arrP[index] = arr[0]
     } else {
         console.log('não')
     }
 }
+
 
 export default function Ai() {
     const [iaState, setIaState] = useState('Ai On')

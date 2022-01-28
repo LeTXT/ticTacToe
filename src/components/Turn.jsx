@@ -9,7 +9,7 @@ export default function Turn({turnState}) {
 
   const classnameT = () => Logic() ? '' : arr[0] === 'x' ? 'red' : arr[0] === 'o' ? 'blue' : ""
 
-  const arrWin = () => arr[1] === 'x' ? <h1 className='red'>x</h1> : <h1 className='blue'>o</h1> 
+  const arrWin = () => arr[1] === 'x' ? <h1 className='red'>x</h1> : arr[1] === 'o' ? <h1 className='blue'>o</h1> : <h1 className='red'>x</h1> 
 
   const h1 = <h1 className='h1'> Win!</h1>
 
