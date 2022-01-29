@@ -2,10 +2,10 @@ import React, {useState} from 'react'
 
 import {arr, arrP} from './Arr'
 import Logic from './Logic'
-import Reset from './Reset'
+import Ai from './Ai'
 
 
-export default function Button({index, setState, className, stateArr, setStateArr, state}) {
+export default function Button({index, setState, className, stateArr, setStateArr, state, setStateAi, stateAi}) {
   const [stateB, setStateB] = useState(false)
 
   
@@ -22,7 +22,7 @@ const clearArr = () => {
   arr.shift()
   }
   
-  
+  const aiOn = () => setStateAi(true)
   const disabled = () => setStateB(!stateB)
 
    
@@ -31,8 +31,10 @@ const clearArr = () => {
     clearArr()
     disabled()
     Logic()
-   
+    aiOn()
+    
   }
+
 
 //   const stateArrOn = () => !props.stateArr === undefined 
 

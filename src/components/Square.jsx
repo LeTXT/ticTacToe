@@ -3,14 +3,14 @@ import React, {useState} from 'react'
 import Turn from './Turn'
 import Button from './Button'
 import Reset from './Reset'
-import Ai from './Ai'
+import Ai, { ai } from './Ai'
 
 import {arr, arrP} from './Arr'
 
 export default function Square() {
   const [state, setState] = useState(arr)
   const [stateArr, setStateArr] = useState(arrP)
-  const [stateTF, setStateTF] = useState()
+  const [stateAi, setStateAi] = useState(false)
 
  
   const reset = () => {
@@ -26,6 +26,7 @@ export default function Square() {
     return true
   }
 
+  const setStateF = () => setState([arr[0]])
 
   const classname = (e) => stateArr[e] === 'x' ? 'red' : 'blue'
 
@@ -33,25 +34,25 @@ export default function Square() {
   return (
     <div className='bodySquare'>
       <div className='flexSquare'>
-        <Button index={0} stateArr={stateArr[0]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(0)}/>
+      <Button index={0} stateArr={stateArr[0]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} setStateAi={setStateAi} stateAi={stateAi} className={classname(0)}/>
 
-        <Button index={1} stateArr={stateArr[1]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(1)}/>
+      <Button index={1} stateArr={stateArr[1]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} setStateAi={setStateAi} stateAi={stateAi} className={classname(1)}/>
 
-        <Button index={2} stateArr={stateArr[2]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(2)}/>
-      </div>
-      <div className='flexSquare'>
-        <Button index={3} stateArr={stateArr[3]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(3)}/>
+      <Button index={2} stateArr={stateArr[2]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} setStateAi={setStateAi} stateAi={stateAi} className={classname(2)}/>
+</div>
+<div className='flexSquare'>
+      <Button index={3} stateArr={stateArr[3]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} setStateAi={setStateAi} stateAi={stateAi} className={classname(3)}/>
 
-        <Button index={4} stateArr={stateArr[4]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(4)}/>
+      <Button index={4} stateArr={stateArr[4]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} setStateAi={setStateAi} stateAi={stateAi} className={classname(4)}/>
 
-        <Button index={5}  stateArr={stateArr[5]}  state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(5)}/>
-      </div>
-      <div className='flexSquare'>
-        <Button index={6} stateArr={stateArr[6]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(6)}/>
+      <Button index={5}  stateArr={stateArr[5]}  state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} setStateAi={setStateAi} stateAi={stateAi} className={classname(5)}/>
+</div>
+<div className='flexSquare'>
+      <Button index={6} stateArr={stateArr[6]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} setStateAi={setStateAi} stateAi={stateAi} className={classname(6)}/>
 
-        <Button index={7} stateArr={stateArr[7]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(7)}/>
+      <Button index={7} stateArr={stateArr[7]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} setStateAi={setStateAi} stateAi={stateAi} className={classname(7)}/>
 
-        <Button index={8} stateArr={stateArr[8]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} className={classname(8)}/>
+      <Button index={8} stateArr={stateArr[8]} state={state} setState={setState} setStateArr={setStateArr} stateArrs={stateArr} setStateAi={setStateAi} stateAi={stateAi} className={classname(8)}/>
       </div>
      
       
@@ -59,7 +60,7 @@ export default function Square() {
 
       <div className='flex-btn'>
       <Reset reset={() => reset()}/>
-      <Ai stateArr={stateArr} setStateArr={setStateArr} setState={setState}/>
+      <Ai stateArr={stateArr} setStateArr={setStateArr} setState={setState} setStateAi={setStateAi} stateAi={stateAi} setStateF={setStateF} />
       </div>
       
     </div>

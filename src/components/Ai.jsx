@@ -3,49 +3,67 @@ import React, {useState} from "react";
 import {arrP, arr} from './Arr'
 
 
-export default function Ai({stateArr, setState}) {
-    const [iaState, setIaState] = useState('Ai On')
+export default function Ai({stateArr, setState, setStateAi, stateAi, setStateArr}) {
+    const [onState, setOnState] = useState('Ai On')
     
 
     const math = (min, max) => { 
         min = Math.ceil(min)
         max = Math.floor(max)
-        let e = Math.floor(Math.random() * (max - min + 1)) + min
-        return e 
+        return Math.floor(Math.random() * (max - min + 1)) + min
     }
 
-    const test = () => {
-
-        let e = math(0, 8)
-
-        if(arrP[e] === undefined) {
-        console.log(e)
-        setState([arr[0]])
-        stateArr[e] = arr[0] 
-        arr.shift() 
-        return stateArr
-    } else {
-        console.log('else')
-        let again = test()
-        return again
-    }
-    }
     
+        
+    const test = () => {
+        
+        setTimeout(() => {
+            
+            if(arr !== undefined) {
+                let e = undefined
+                e = math(0, 8)
+                    if(arrP[e] === undefined) {
+    
+                        console.log(e)
+    
+                        setState([arr[0]])
+
+                        arrP[e] = arr[0]
+    
+                        setStateArr(arrP) 
+                         
+                        arr.shift()
+
+                    return setStateArr
+                    } else {
+                        console.log('else')
+                        let again = test()
+                        return again
+                    }
+            }
+        }, 1000) 
+        
+    }
+
+    if(stateAi) {
+        test()
+        setStateAi(false)
+    }
     console.log(stateArr)
 
-    const onOf = () => iaState === 'Ai On' ? setIaState('Ai Off') : setIaState('Ai On')
+    const onOf = () => onState === 'Ai On' ? setOnState('Ai Off') : setOnState('Ai On')
     
 
     const handleClick = () => {
         onOf()
-        test()
+        
     }
 
     return (
         <div className="btn-res-class">
             
             <button className="btn-ai" onClick={() => handleClick()}></button>
-            <p>{iaState}</p>
+            <p>{onState}</p>
 
         </div>
     )
