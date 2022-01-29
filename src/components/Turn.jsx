@@ -7,24 +7,21 @@ import Reset from './Reset'
 export default function Turn({turnState}) {
   
 
-  const classnameT = () => Logic() ? '' : arr[0] === 'x' ? 'red' : arr[0] === 'o' ? 'blue' : ""
+  const classnameT = () => turnSta() === 'x' ? 'red' : turnSta() === 'o' ? 'blue' : ''
 
-  const classnameW = () => turnStr() === 'x' ? 'red transforme-size' : turnStr() === 'o' ? 'blue transforme-size' : ''
 
   const arrWin = () => arr[0] === 'x' ? 'o' : arr[0] === 'o' ? 'x' : arr[0] === undefined ? 'x' : 'o'
 
-  const h1 = <h1 className='h1'> Win!</h1>
 
-  const turnSta = () => Logic() ? h1 : arr[0] === undefined ? 'Draw' : arr[0]
+  const turnSta = () => Logic() ? arrWin() : arr[0] === undefined ? 'Draw' : arr[0]
     
 
-  const turnStr = () => Logic() ? arrWin() : arr[0] === undefined ? '' : 'Turn:'
-  
+  const turnStr = () => Logic() ? 'Winner:' : arr[0] === undefined ? '' : 'Turn:'
   
 
     return (
         <div className='bodyTurn' >
-          <h1 className={classnameW()}>
+          <h1>
             {turnStr()}
           </h1>
           <h3 className={classnameT()}>
