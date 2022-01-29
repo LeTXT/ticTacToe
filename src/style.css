@@ -68,7 +68,7 @@ button {
 }
 .btn {
   border-style: hidden;
-  border: solid 1px;
+  
 
   background-color: white;
   transition: 0.9s;
@@ -143,5 +143,23 @@ button {
 }
 
 .transforme-size {
-  font-size: 50px;
+  font-size: 48px;
+}
+
+.border-bottom {
+  border-bottom: solid 3px #808080;
+}
+
+.border-top {
+  border-top: solid 3px #808080;
+}
+
+.border-lr{
+  border-left: solid 3px #808080;
+  border-right: solid 3px #808080;
+}
+
+.border-b {
+  border: solid 3px #808080;
+  
 }
