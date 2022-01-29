@@ -9,7 +9,9 @@ export default function Turn({turnState}) {
 
   const classnameT = () => Logic() ? '' : arr[0] === 'x' ? 'red' : arr[0] === 'o' ? 'blue' : ""
 
-  const arrWin = () => arr[1] === 'x' ? <h1 className='red'>x</h1> : arr[1] === 'o' ? <h1 className='blue'>o</h1> : <h1 className='red'>x</h1> 
+  const classnameW = () => turnStr() === 'x' ? 'red transforme-size' : turnStr() === 'o' ? 'blue transforme-size' : ''
+
+  const arrWin = () => arr[0] === 'x' ? 'o' : arr[0] === 'o' ? 'x' : arr[0] === undefined ? 'x' : 'o'
 
   const h1 = <h1 className='h1'> Win!</h1>
 
@@ -22,7 +24,7 @@ export default function Turn({turnState}) {
 
     return (
         <div className='bodyTurn' >
-          <h1>
+          <h1 className={classnameW()}>
             {turnStr()}
           </h1>
           <h3 className={classnameT()}>
@@ -31,4 +33,3 @@ export default function Turn({turnState}) {
         </div>
       )
 }
-
