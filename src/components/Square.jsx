@@ -60,7 +60,7 @@ export default function Square() {
 
       <div className='flex-btn'>
       <Reset reset={() => reset()}/>
-      <Ai stateArr={stateArr} setStateArr={setStateArr} setState={setState} setStateAi={setStateAi} stateAi={stateAi} setStateF={setStateF} />
+      <Ai stateArr={stateArr} setStateArr={setStateArr} setState={setState} setStateAi={setStateAi} stateAi={stateAi} setStateF={setStateF} state={state}/>
       </div>
       
     </div>
