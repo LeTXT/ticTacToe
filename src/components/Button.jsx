@@ -32,7 +32,7 @@ const clearArr = () => {
   }
 
 
- 
+  
 
   return (
     <div className='bodyButton' >

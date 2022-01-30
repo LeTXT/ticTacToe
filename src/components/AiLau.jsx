@@ -31,6 +31,7 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
 
     const block = (a, b, c) => arrP[a] === arrP[b] && arrP[c] === undefined && arrP[a] !== undefined && arrP[b] !== undefined 
     
+    const single = (a, c) => arrP[a] !== undefined && arrP[c] === undefined
     
     const test = () => {
                         
@@ -83,11 +84,20 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
                 run(1)
             } else if(block(8, 5, 4)) {
                 run(4)
-            } else if (arrP[0] !== undefined || arrP[2] !== undefined || arrP[6] !== undefined || arrP[8] !== undefined && arrP[4] === undefined) {
+            } 
+            // Parte de jogadas em um único indice
+            else if (single(0, 4)) {
+                run(4)
+            } else if (single(2, 4)) {
+                run(4)
+            } else if (single(6, 4)) {
+                run(4)
+            } else if (single(8, 4)) {
                 run(4)
             }
              else if(arrP[m] === undefined) {
                 run(m)
+                console.log('Aqui')
             } else {
                 console.log('else')
                 let again = test()

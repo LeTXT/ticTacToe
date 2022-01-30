@@ -26,9 +26,6 @@ export default function Square() {
     return true
   }
 
-  
-  
-
   const classname = (e) => stateArr[e] === 'x' ? 'red' : 'blue'
 
   const borderBottom = () => 'border-bottom btn'
