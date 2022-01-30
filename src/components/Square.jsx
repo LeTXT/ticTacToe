@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import Turn from './Turn'
 import Button from './Button'
 import Reset from './Reset'
-import Ai, { ai } from './Ai'
+import LauritaAi from './AiLau'
 
 import {arr, arrP} from './Arr'
 
@@ -69,7 +69,7 @@ export default function Square() {
 
       <div className='flex-btn'>
       <Reset reset={() => reset()}/>
-      <Ai stateArr={stateArr} setStateArr={setStateArr} setState={setState} setStateAi={setStateAi} stateAi={stateAi}/>
+      <LauritaAi stateArr={stateArr} setStateArr={setStateArr} setState={setState} setStateAi={setStateAi} stateAi={stateAi}/>
       </div>
       
     </div>
