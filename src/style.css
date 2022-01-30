@@ -112,6 +112,7 @@ button {
 
   transform: rotate(135deg);
 
+  margin-top: 10px;
 }
 
 .btn-res-class {
