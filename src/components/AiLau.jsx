@@ -29,7 +29,7 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
     return stateArr
     }
 
-    const block = (a, b, c) => arrP[a] === arrP[b] && arrP[c] === undefined
+    const block = (a, b, c) => arrP[a] === arrP[b] && arrP[c] === undefined && arrP[a] !== undefined && arrP[b] !== undefined 
     
     
     const test = () => {
@@ -49,6 +49,8 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
                 run(6)
             } else if(block(0, 6, 3)) {
                 run(3)
+            } else if(block(1, 2, 0)) {
+                run(0)
             } else if(block(1, 4, 7)) {
                 run(7)
             } else if(block(1, 7, 4)) {
@@ -99,7 +101,7 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
         }
         if(stateAi && !Logic() && onState === 'Ai On') {
             setTimeout(() => {
-                test()
+            test()
             setStateAi(false)
             setStateArr(arrP)
             }, 1000)
