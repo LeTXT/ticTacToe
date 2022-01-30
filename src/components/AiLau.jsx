@@ -83,8 +83,8 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
                 run(1)
             } else if(block(8, 5, 4)) {
                 run(4)
-            } else if (arrP[0] !== undefined && arrP[6] === undefined) {
-                run(6)
+            } else if (arrP[0] !== undefined || arrP[2] !== undefined || arrP[6] !== undefined || arrP[8] !== undefined && arrP[4] === undefined) {
+                run(4)
             }
              else if(arrP[m] === undefined) {
                 run(m)
