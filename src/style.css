@@ -103,7 +103,7 @@ button {
   border-radius: 10px;
   border-style: hidden;
 
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: rgb(31, 30, 30) 0px 1px 3px 0px, rgba(0, 0, 0, 0.637) 0px 0px 0px 1px;
 
   width: 50px;
   height: 20px;
@@ -133,8 +133,8 @@ button {
 
   border-style: none;
 
-  box-shadow: rgb(0, 0, 0) 1.95px 1.95px 2.6px;
-  box-shadow: rgb(0, 0, 0) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(255, 255, 255, 0.212) 0px -2px 6px 0px inset;
+  box-shadow: rgb(31, 30, 30) 0px 1px 3px 0px, rgba(0, 0, 0, 0.637) 0px 0px 0px 1px;
+  
   
 
   margin: auto;
