@@ -135,7 +135,6 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
             } else if(arrP[4] !== undefined ) {
                 const array = [0, 2, 6, 8]
                 const c = array[math(0, 3)]
-                console.log(c + 'do c')
                 run(c)
             }
              else if(arrP[m] === undefined) {
