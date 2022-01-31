@@ -6,7 +6,7 @@ import Logic from "./Logic";
 
 export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, setStateArr}) {
     const [onState, setOnState] = useState('Ai On')
-    
+    const [onStateD, setStateD] = useState('medium')
 
     const math = (min, max) => { 
         min = Math.ceil(min)
@@ -195,9 +195,13 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
 
     return (
         <div className="btn-res-class">
-            
+            <div>
             <button className="btn-ai" onClick={() => handleClick()}></button>
             <p>{onState}</p>
+            </div>
+            <div>
+                
+            </div>
 
         </div>
     )
