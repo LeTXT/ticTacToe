@@ -125,24 +125,18 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
             } else if(block(8, 5, 4)) {
                 run(4)
             } 
-            // Parte de jogadas em um único indice
-            // else if (single(0, 4)) {
-            //     run(4)
-            // } else if (single(2, 4)) {
-            //     run(4)
-            // } else if (single(6, 4)) {
-            //     run(4)
-            // } else if (single(8, 4)) {
-            //     run(4)
-           // } 
+           
             else if ((arrP[0] !== undefined || arrP[2] !== undefined || arrP[6] !== undefined || arrP[8] !== undefined) && arrP[4] === undefined) {
                 run(4)
             }
             // Estratégia mais complexas
             else if (aiSingle(3, 5, 4)) {
                 run(3)
-            } else if(arrP[4] !== undefined && arrP[2] === undefined ) {
-                run(2)
+            } else if(arrP[4] !== undefined ) {
+                const array = [0, 2, 6, 8]
+                const c = array[math(0, 3)]
+                console.log(c + 'do c')
+                run(c)
             }
              else if(arrP[m] === undefined) {
                 run(m)
