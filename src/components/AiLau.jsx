@@ -136,6 +136,25 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
                 const array = [0, 2, 6, 8]
                 const c = array[math(0, 3)]
                 run(c)
+            } 
+            else if (arrP[1] !== undefined || arrP[3] !== undefined || arrP[5] !== undefined || arrP[7] !== undefined ) {
+                if (arrP[1] !== undefined) {
+                    const array = [0, 2, 4, 6, 7, 8]
+                    const c = array[math(0, 5)]
+                    run(c)
+                } else if (arrP[3] !== undefined) {
+                    const array = [0, 2, 4, 5, 6, 8]
+                    const c = array[math(0, 5)]
+                    run(c)
+                } else if (arrP[5] !== undefined) {
+                    const array = [0, 2, 3, 4, 6, 8]
+                    const c = array[math(0, 5)]
+                    run(c)
+                } else if (arrP[7] !== undefined) {
+                    const array = [0, 1, 2, 4, 6, 8]
+                    const c = array[math(0, 5)]
+                    run(c)
+                }
             }
              else if(arrP[m] === undefined) {
                 run(m)
