@@ -6,7 +6,7 @@ import Logic from "./Logic";
 
 export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, setStateArr}) {
     const [onState, setOnState] = useState('Ai On')
-    const [onStateD, setStateD] = useState('medium')
+    const [stateD, setStateD] = useState('medium')
 
     const math = (min, max) => { 
         min = Math.ceil(min)
@@ -29,11 +29,11 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
     return stateArr
     }
 
-    const block = (a, b, c) => arrP[a] === arrP[b] && arrP[c] === undefined && arrP[a] !== undefined && arrP[b] !== undefined 
+    const block = (a, b, c) => arrP[a] === arrP[b] && arrP[c] === undefined && arrP[a] !== undefined && arrP[b] !== undefined && (stateD === "medium" || stateD === 'hard')
 
-    const aiGame = (a, b, c) => arrP[a] === arrP[b] && arrP[c] === undefined && arrP[a] !== undefined && arrP[b] !== undefined && arrP === 'o'
+    const aiGame = (a, b, c) => arrP[a] === arrP[b] && arrP[c] === undefined && arrP[a] !== undefined && arrP[b] !== undefined && arrP === 'o' & (stateD === "medium" || stateD === 'hard')
     
-    const aiSingle = (a, b, c) => arrP[a] === undefined && arrP[b] === undefined && arrP[c] !== undefined && arrP[c] === 'o'
+    const aiSingle = (a, b, c) => arrP[a] === undefined && arrP[b] === undefined && arrP[c] !== undefined && arrP[c] === 'o' && stateD === 'hard'
     
     const test = () => {
                         
@@ -126,7 +126,7 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
                 run(4)
             } 
            
-            else if ((arrP[0] !== undefined || arrP[2] !== undefined || arrP[6] !== undefined || arrP[8] !== undefined) && arrP[4] === undefined) {
+            else if ((arrP[0] !== undefined || arrP[2] !== undefined || arrP[6] !== undefined || arrP[8] !== undefined) && arrP[4] === undefined && stateD === 'hard') {
                 run(4)
             }
             // Estratégia mais complexas
@@ -137,7 +137,7 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
                 const c = array[math(0, 3)]
                 run(c)
             } 
-            else if (arrP[1] !== undefined || arrP[3] !== undefined || arrP[5] !== undefined || arrP[7] !== undefined ) {
+            else if ((arrP[1] !== undefined || arrP[3] !== undefined || arrP[5] !== undefined || arrP[7] !== undefined) && stateD === 'hard') {
                 if (arrP[1] !== undefined) {
                     const array = [0, 2, 4, 6, 7, 8]
                     const c = array[math(0, 5)]
@@ -193,14 +193,22 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
         
     }
 
+    const easy = () => stateD === 'easy' ? 'btn-level btn-red' : 'btn-level' 
+    const medium = () => stateD === 'medium' ? 'btn-level btn-red' : 'btn-level'
+    const hard = () => stateD === 'hard' ? 'btn-level btn-red' : 'btn-level'
+
     return (
-        <div className="btn-res-class">
+        <div className="btn-res-class flex">
             <div>
+            
             <button className="btn-ai" onClick={() => handleClick()}></button>
             <p>{onState}</p>
             </div>
-            <div>
-                
+            
+            <div className="grid">
+                <button className={easy()} onClick={() => setStateD('easy')}>Easy</button>
+                <button className={medium()} onClick={() => setStateD('medium')}>Medium</button>
+                <button className={hard()} onClick={() => setStateD('hard')}>Hard</button>
             </div>
 
         </div>

@@ -21,6 +21,7 @@ h3 {
 
 button {
   outline: none;
+  cursor: pointer;
 }
 
 .h1 {
@@ -166,4 +167,30 @@ button {
 .border-b {
   border: solid 3px #808080;
   
+}
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  gap: 10px;
+}
+
+.btn-level{
+  margin-left: 20px;
+  border-style: none;
+
+  
+  border-radius: 10px;
+
+
+  font-family: 'Press Start 2P';
+
+  background-color: white;
+}
+
+.btn-red {
+  color: #c1121f;
 }
