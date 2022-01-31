@@ -134,7 +134,7 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
             //     run(4)
             // } else if (single(8, 4)) {
             //     run(4)
- fined           // } 
+           // } 
             else if ((arrP[0] !== undefined || arrP[2] !== undefined || arrP[6] !== undefined || arrP[8] !== undefined) && arrP[4] === undefined) {
                 run(4)
             }
