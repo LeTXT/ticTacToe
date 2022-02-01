@@ -7,6 +7,7 @@ import Logic from "./Logic";
 export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, setStateArr}) {
     const [onState, setOnState] = useState('Ai On')
     const [stateD, setStateD] = useState('medium')
+    const [stateAiA, setStateAiA] = useState('o')
 
     const math = (min, max) => { 
         min = Math.ceil(min)
@@ -29,46 +30,69 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
     return stateArr
     }
 
-    const block = (a, b, c) => arrP[a] === arrP[b] && arrP[c] === undefined && arrP[a] !== undefined && arrP[b] !== undefined && (stateD === "medium" || stateD === 'hard')
+    const block = (a, b, c) => arrP[a] === arrP[b] && arrP[c] === undefined && arrP[a] !== stateAiA && arrP[b] !== stateAiA && (stateD === "medium" || stateD === 'hard')
 
-    const aiGame = (a, b, c) => arrP[a] === arrP[b] && arrP[c] === undefined && arrP[a] !== undefined && arrP[b] !== undefined && arrP === 'o' & (stateD === "medium" || stateD === 'hard')
+    const aiGame = (a, b, c) => arrP[a] === arrP[b] && arrP[c] === undefined && arrP[a] === stateAiA && arrP[b] === stateAiA && (stateD === "medium" || stateD === 'hard')
+
     
-    const aiSingle = (a, b, c) => arrP[a] === undefined && arrP[b] === undefined && arrP[c] !== undefined && arrP[c] === 'o' && stateD === 'hard'
+    const aiSingle = (a, b, c) => arrP[a] === undefined && arrP[b] === undefined && arrP[c] !== undefined && arrP[c] === stateAiA && stateD === 'hard'
     
     const test = () => {
                         
-        if(arr !== undefined && arr[0] === 'o') {
+        if(arr !== undefined && arr[0] === stateAiA) {
             let m = math(0, 8)
             // Ia tenta ganhar aqui
-            if (aiGame(6, 8, 7)) {
-                run(7)
-            } else if (aiGame(6, 7, 8)) {
-                run(8)
-            } else if (aiGame(7, 8, 6)) {
-                run(6)
-            } else if (aiGame(6, 4, 2)) {
+             if(aiGame(0, 1, 2)){
                 run(2)
-            } else if (aiGame(8, 4, 0)) {
-                run(0)
-            } else if (aiGame(7, 4, 1)) {
+            } else if(aiGame(0, 2, 1)) {
                 run(1)
-            } else if (aiGame(3, 4, 5)) {
-                run(5)
-            } else if (aiGame(5, 4, 3)) {
+            } else if(aiGame(0, 4, 8)) {
+                run(8)
+            } else if(aiGame(0, 8, 4)) {
+                run(4)
+            } else if(aiGame(0, 3, 6)) {
+                run(6)
+            } else if(aiGame(0, 6, 3)) {
                 run(3)
-            } else if (aiGame(2, 4, 6)) {
-                run(6)
-            } else if (aiGame(0, 4, 8)) {
-                run(8)
-            } else if (aiGame(2, 1, 0)) {
+            } else if(aiGame(1, 2, 0)) {
                 run(0)
-            } else if (aiGame(2, 4, 7)) {
+            } else if(aiGame(1, 4, 7)) {
                 run(7)
-            } else if (aiGame(2, 0, 1)) {
-                run(1)
-            } else if (aiGame(0, 4, 2)) {
+            } else if(aiGame(1, 7, 4)) {
+                run(4)
+            } else if(aiGame(2, 5, 8)) {
+                run(8)
+            } else if(aiGame(2, 8, 5)) {
+                run(5)
+            } else if(aiGame(2, 4, 6)) {
+                run(6)
+            } else if(aiGame(2, 6, 4)) {
+                run(4)
+            } else if(aiGame(3, 4, 5)) {
+                run(5)
+            } else if(aiGame(2, 5, 4)) {
+                run(4)
+            } else if(aiGame(6, 7, 8)) {
+                run(8)
+            } else if(aiGame(6, 8, 7)) {
+                run(7)
+            } else if(aiGame(6, 4, 2)) {
                 run(2)
-            }
+            } else if(aiGame(2, 1, 0)) {
+                run(0)
+            } else if(aiGame(5, 4, 3)) {
+                run(3)
+            } else if(aiGame(8, 7, 6)) {
+                run(6)
+            } else if(aiGame(8, 4, 0)) {
+                run(0)
+            } else if(aiGame(6, 3, 0)) {
+                run(0)
+            } else if(aiGame(7, 4, 1)) {
+                run(1)
+            } else if(aiGame(8, 5, 4)) {
+                run(4)
+            } 
 
 
 
@@ -135,6 +159,7 @@ export default function LauritaAi ({stateArr, setState, setStateAi, stateAi, set
             } else if(arrP[4] !== undefined ) {
                 const array = [0, 2, 6, 8]
                 const c = array[math(0, 3)]
+                console.log('hard')
                 run(c)
             } 
             else if ((arrP[1] !== undefined || arrP[3] !== undefined || arrP[5] !== undefined || arrP[7] !== undefined) && stateD === 'hard') {
